@@ -1,0 +1,24 @@
+{
+  "name": "js-rest-18",
+  "version": "1.0.0",
+  "description": "Trying out modern JS and REST",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sivhollup/js-rest-18.git"
+  },
+  "keywords": [
+    "js",
+    "rest",
+    "es6"
+  ],
+  "author": "Siv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sivhollup/js-rest-18/issues"
+  },
+  "homepage": "https://github.com/sivhollup/js-rest-18#readme"
+}
