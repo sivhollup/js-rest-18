@@ -3,7 +3,9 @@ const TvShowService = require('./TvShowService');
 
 const tvShowRouter = express.Router();
 
-tvShowRouter.get('/', (request, response) => response.json(TvShowService.getAll()));
+tvShowRouter.route('/').get((request, response) => {
+    return response.json(TvShowService.getAll());
+});
 
 tvShowRouter.route('/:tvShowId').get((req, res) => {
     const tvShowId = req.params.tvShowId;
@@ -19,5 +21,11 @@ tvShowRouter.post('/', (req, res) => {
     const tvShow = TvShowService.createTvShow(name, genre);
     res.json(tvShow);
 });
+
+tvShowRouter.route('/:tvShowId').delete((req, res) => {
+    const id = req.params.tvShowId;
+    console.log(`Deleting tv show with id ${id}`);
+    TvShowService.remove(id);
+})
 
 module.exports = tvShowRouter;
