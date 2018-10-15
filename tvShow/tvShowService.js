@@ -27,5 +27,17 @@ class TvShowService {
         this.tvShows = this.tvShows.filter(tvShow => tvShow.id !== id);
     }
 
+    update(id, updatedTvShow) {
+        this.tvShows = this.tvShows
+            .map(tvShow => {
+                if (tvShow.id === id) {
+                    return Object.assign({}, tvShow, updatedTvShow);
+                }
+                return tvShow;
+            });
+        return this.getById(id);
+    }
+
+
 }
 module.exports = new TvShowService();

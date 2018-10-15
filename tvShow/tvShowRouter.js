@@ -26,6 +26,13 @@ tvShowRouter.route('/:tvShowId').delete((req, res) => {
     const id = req.params.tvShowId;
     console.log(`Deleting tv show with id ${id}`);
     TvShowService.remove(id);
-})
+});
+
+tvShowRouter.route('/:tvShowId').put((req, res) => {
+    const tvShowId = req.params.tvShowId;
+    const tvShowToUpdate = req.body;
+    const updatedTvShow = TvShowService.update(tvShowId, tvShowToUpdate);
+    res.send(updatedTvShow);
+});
 
 module.exports = tvShowRouter;
